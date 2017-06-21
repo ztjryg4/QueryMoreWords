@@ -308,6 +308,3 @@ away
 awesome
 awful
 awkward
-i
-love
-earphone
