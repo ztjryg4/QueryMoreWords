@@ -13,8 +13,10 @@ for dancicnt in range(0,n):
      return html
 
  f = open("sample.txt")
+ w = open("output.txt","a+")
  danci = f.readlines()[dancicnt]
  print("正在查询："+danci, end = '')
+ w.write(danci)
  iPos = 0
 	 
  wangzhi="http://dict.youdao.com/app/baidu/search?q="+danci
@@ -43,4 +45,6 @@ for dancicnt in range(0,n):
      return result
  
  print(getImg(html))
+ w.write(getImg(html) + '\n' + '\n')
  f.close()
+ w.close()
