@@ -47,7 +47,7 @@ for dancicnt in range(0,n):
       result = result + s + ''.join(imglist[c])
      return result
 
- #print(getImg(html))
+ print(getImg(html))
  w.write(getImg(html) + '\n' + '\n')
  f.close()
  w.close()
