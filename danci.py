@@ -29,6 +29,9 @@ for dancicnt in range(0,n):
      reg = r'<li>(.*?)</li>'
      imgre = re.compile(reg)
      imglist = re.findall(imgre,html)
+     if len(imglist) == 0:
+        result = "未收录"
+        return result
      for i in range(0,len(imglist)):
       yuansu = ''.join(imglist[i])
       chazhao = '. '
@@ -43,8 +46,8 @@ for dancicnt in range(0,n):
        s='\n'
       result = result + s + ''.join(imglist[c])
      return result
- 
- print(getImg(html))
+
+ #print(getImg(html))
  w.write(getImg(html) + '\n' + '\n')
  f.close()
  w.close()
