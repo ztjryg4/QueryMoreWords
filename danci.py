@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-  
 import urllib.request
 import re
+import locale
 f = open("sample.txt")
 n = len(f.readlines())
 f.close
@@ -25,7 +26,7 @@ for dancicnt in range(0,n):
 
  def getImg(html):
      global iPos
-     html = html.decode('utf-8')
+     html = html.decode('utf-8','ignore')
      reg = r'<li>(.*?)</li>'
      imgre = re.compile(reg)
      imglist = re.findall(imgre,html)
@@ -46,8 +47,7 @@ for dancicnt in range(0,n):
        s='\n'
       result = result + s + ''.join(imglist[c])
      return result
-
- print(getImg(html))
- w.write(getImg(html) + '\n' + '\n')
+ print(getImg(html).encode('gb18030','ignore').decode(locale.getpreferredencoding(),'ignore'))
+ w.write(getImg(html).encode('gb18030','ignore').decode(locale.getpreferredencoding(),'ignore') + '\n' + '\n')
  f.close()
  w.close()

@@ -56,5 +56,5 @@ for dancicnt in range(0,n):
      save_as_csv(csvdata,'output.csv')
      return result
 
- print(getImg(html))
+ print(getImg(html).encode('gb18030','ignore').decode(locale.getpreferredencoding(),'ignore'))
  f.close()
